@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Name Font';
+  src: url('/fonts/BlinktwiceRegular-4BvE4.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Labels Font';
+  src: url('/fonts/MochiyPopOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Infos Font';
+  src: url('/fonts/Sebian.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-name: 'Name Font', sans-serif;
+  --font-label: 'Labels Font', sans-serif;
+  --font-info: 'Infos Font', sans-serif;
+
+  --color-accent: #ffab03;
+  --color-white: #fff;
+}
+
+.card-page {
+  color: var(--color-accent);
+}
+
+.member-card {
+  background: url('https://res.cloudinary.com/dc1dcxnpt/image/upload/v1742238790/Nave/cartao.png') center / 100% 100% no-repeat;
+  max-width: 680px;
+  max-height: 305px;
+  width: 100%;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+}
+
+.member-card h4 {
+  color: var(--color-white);
+  font-size: clamp(0.4rem, 2vw, 1.25rem);
+  font-family: var(--font-name);
+  text-align: left;
+}
+
+.member-card p {
+  font-size: clamp(0.2rem, 1.2vw, 0.8rem);
+  margin-bottom: 10%;
+  color: var(--color-white);
+  margin-left: 5%;
+  font-family: var(--font-info);
+  letter-spacing: 0.1em
+}
+
+.member-card strong {
+  font-family: var(--font-label);
+}
+
+.logo-img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+  margin-left: 2%;
+}
+
+.member-card.download-mode {
+  width: 680px !important;
+  height: 305px !important;
+}
+
+.member-card.download-mode h4 {
+  font-size: 20px !important;
+}
+
+.member-card.download-mode p {
+  font-size: 13px !important;
+  margin-left: 20px !important;
+}
+
+.member-card.download-mode .logo-img {
+  width: 275px !important;
+  height: 275px !important;
+}

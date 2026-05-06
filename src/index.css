@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Title Font';
+  src: url('/fonts/the-last-shuriken-the-last-shuriken-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-title: 'Title Font', sans-serif;
+
+  --color-primary: #8f152d;
+  --color-accent: #ffab03;
+  --color-white: #fff;
+  --color-text: #000;
+  --color-error: #dc3545;
+  --color-border: #ccc;
+  --color-scrollbar-track: #f1f1f1;
+
+  --shadow-check: 0 0 8px rgba(255, 171, 3, 0.6);
+  --shadow-red-button: 0 0 12px rgb(143, 21, 45, 1);
+  --shadow-yellow-button: 0 0 12px rgba(255, 171, 3, 1);
+
+  --transition-ui: background-color 0.3s, border-color 0.3s;
+  --transition-text: color 0.3s ease-in-out;
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-primary);
+  background: url('https://res.cloudinary.com/dc1dcxnpt/image/upload/v1742238688/Nave/inscricao_fundo.png') center / cover no-repeat fixed;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h2,
+.page-buttons {
+  font-family: var(--font-title);
+}
+
+.btn.search-button {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  transition: var(--transition-ui);
+}
+
+.btn.search-button:hover,
+.btn.search-button:focus {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-yellow-button);
+}
+
+.form-activity-label,
+.form-radio-label {
+  color: var(--color-text);
+}
+
+.form-label,
+.form-check-label {
+  color: var(--color-primary);
+}
+
+.form-control {
+  border: 1.5px solid var(--color-text);
+  transition: var(--transition-ui);
+}
+
+.form-control::placeholder {
+  color: var(--color-text);
+}
+
+.form-control:hover,
+.form-control:focus {
+  border-color: var(--color-accent);
+}
+
+.form-control:focus{
+  box-shadow: var(--shadow-check);
+  outline: none;
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--color-text);
+  transition: var(--transition-ui);
+}
+
+.form-check-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.form-check-input:checked{
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-check-input:hover,
+.form-check-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-check);
+}
+
+.form-check-input[type="radio"].is-invalid {
+  border-color: var(--color-error);
+}
+
+.form-box {
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  max-height: 490px;
+  overflow-y: auto;
+  background-color: var(--color-white);
+}
+
+.form-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-box::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 4px;
+  border: 2px solid var(--color-white);
+}
+
+.form-box::-webkit-scrollbar-track {
+  background-color: var(--color-scrollbar-track);
+  border-radius: 4px;
+}
+
+.btn-custom {
+  background-color: var(--color-white);
+  border: 3px solid;
+}
+
+.btn-primary.btn-custom {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-secondary.btn-custom {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+  color: var(--color-white);
+}
+
+.btn-primary.btn-custom:hover,
+.btn-primary.btn-custom:focus {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-yellow-button);
+}
+
+.btn-secondary.btn-custom:hover,
+.btn-secondary.btn-custom:focus {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-red-button);
+}
+
+.link {
+  text-decoration: none;
+  transition: var(--transition-text);
+}
+
+.link-term {
+  color: var(--color-text);
+}
+
+.link-footer {
+  font-family: var(--font-title);
+  color: var(--color-white);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-accent);
+}
+
+.error-message {
+  color: var(--color-error);
+}
