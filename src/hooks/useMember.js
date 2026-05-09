@@ -5,6 +5,7 @@ import { updateMemberPayload, crateMemberPayload } from '../mappers/memberMapper
 export function useMember() {
   const [member, setMember] = useState(null)
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   function resetSearch() {
     setMember(null)
@@ -21,12 +22,16 @@ export function useMember() {
     }
 
     try {
+      setLoading(true)
+
       const data = await getMemberByDocument(matricula)
 
       setMember(data)
     } catch (err) {
       setMember(null)
       setError(err.message)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -63,5 +68,5 @@ export function useMember() {
     }
   }
 
-  return { member, error, resetSearch, searchRegistry, createRegistry, updateRegistry }
+  return { member, error, loading, resetSearch, searchRegistry, createRegistry, updateRegistry }
 }

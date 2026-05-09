@@ -11,7 +11,7 @@ import { normalizeMember } from '../mappers/memberMapper.js'
 
 
 export default function UpdateMember() {
-  const { member, error, resetSearch, searchRegistry, updateRegistry } = useMember()
+  const { member, error, loading, resetSearch, searchRegistry, updateRegistry } = useMember()
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
 
@@ -71,14 +71,26 @@ export default function UpdateMember() {
           {error && <p className='error-message'>{error}</p>}
           
           <div className='mt-4'>
-            {member && (
-              <UpdateForm
-                register={register}
-                handleSubmit={handleSubmit}
-                setValue={setValue}
-                errors={errors}
-                onSubmit={handleUpdate}
-              />
+            {loading ? (
+              <div className='d-flex flex-column align-items-center justify-content-center my-4'>
+                <img
+                  src='https://res.cloudinary.com/dc1dcxnpt/image/upload/v1740420974/Nave/favicon.png'
+                  alt='Loading'
+                  className='loading-logo'
+                />
+          
+                <p className='mt-3 loadind-text'>Buscando</p>
+              </div>
+            ) : (
+              member && (
+                <UpdateForm
+                  register={register}
+                  handleSubmit={handleSubmit}
+                  setValue={setValue}
+                  errors={errors}
+                  onSubmit={handleUpdate}
+                />
+              )
             )}
           </div>
         </div>

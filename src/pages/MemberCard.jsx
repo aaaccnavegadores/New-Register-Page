@@ -51,17 +51,17 @@ export default function MemberCard() {
   }
 
   return (
-    <div className="card-page container mt-5 d-flex flex-column align-items-center justify-content-center">
-      <h2 className="text-center">Cartão da Nave</h2>
+    <div className='card-page container mt-5 d-flex flex-column align-items-center justify-content-center'>
+      <h2 className='text-center'>Cartão da Nave</h2>
 
       <div
         ref={cardRef}
-        className="member-card d-flex p-4 mt-4 shadow align-items-start"
+        className='member-card d-flex p-4 mt-4 shadow align-items-start'
       >
-        <div className="me-4 flex-grow-1">
+        <div className='me-4 flex-grow-1'>
           <h4>{member.nome.toUpperCase()}</h4>
 
-          <hr className="border-white border-2 opacity-100 mt-4 mb-4" />
+          <hr className='border-white border-2 opacity-100 mt-4 mb-4' />
 
           <p>
             <strong>Número do Sócio:</strong> {member.inscricao}
@@ -77,9 +77,9 @@ export default function MemberCard() {
         </div>
 
         <img
-          className="logo-img img-fluid ms-3"
-          src="https://res.cloudinary.com/dc1dcxnpt/image/upload/v1742221162/Nave/logo.png"
-          alt="Navegadores"
+          className='logo-img img-fluid ms-3'
+          src='https://res.cloudinary.com/dc1dcxnpt/image/upload/v1742221162/Nave/logo.png'
+          alt='Navegadores'
         />
       </div>
 

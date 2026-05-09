@@ -41,7 +41,8 @@ body {
 }
 
 h2,
-.page-buttons {
+.page-buttons,
+.loadind-text {
   font-family: var(--font-title);
 }
 
@@ -196,4 +197,27 @@ h2,
 
 .error-message {
   color: var(--color-error);
+}
+
+
+.loading-logo {
+  width: 80px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }

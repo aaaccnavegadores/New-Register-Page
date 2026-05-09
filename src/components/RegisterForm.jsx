@@ -15,7 +15,7 @@ export default function RegisterForm({
   onSubmit
 }) {
   return (
-    <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
+    <form id='register-form' onSubmit={handleSubmit(onSubmit)}>
       <PersonalInfo register={register} setValue={setValue} errors={errors} />
       <AddressInfo register={register} setValue={setValue} errors={errors} />
       <ContactInfo register={register} setValue={setValue} errors={errors} />

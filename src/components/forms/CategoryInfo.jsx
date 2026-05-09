@@ -9,56 +9,56 @@ export default function CategoryInfo({ register, control, errors }) {
   ]
 
   return (
-    <div className="row mb-5">
-      <div className="col-md-6 mb-4">
-        <label className="form-label">Categoria*</label>
+    <div className='row mb-5'>
+      <div className='col-md-6 mb-4'>
+        <label className='form-label'>Categoria*</label>
 
-        <div className="d-flex flex-wrap gap-3">
-          <div className="form-check">
+        <div className='d-flex flex-wrap gap-3'>
+          <div className='form-check'>
             <input
-              type="radio"
-              value="discente"
+              type='radio'
+              value='discente'
               className={`form-check-input ${errors?.categoria ? 'is-invalid' : ''}`}
               {...register('categoria', { required: 'Selecione a categoria' })}
             />
-            <label className="form-radio-label">
+            <label className='form-radio-label'>
               Aluno
             </label>
           </div>
 
-          <div className="form-check">
+          <div className='form-check'>
             <input
-              type="radio"
-              value="docente"
+              type='radio'
+              value='docente'
               className={`form-check-input ${errors?.categoria ? 'is-invalid' : ''}`}
               {...register('categoria', { required: 'Selecione a categoria' })}
             />
-            <label className="form-radio-label">
+            <label className='form-radio-label'>
               Professor
             </label>
           </div>
         </div>
 
         {errors?.categoria && (
-          <div className="invalid-feedback d-block">
+          <div className='invalid-feedback d-block'>
             {errors.categoria.message}
           </div>
         )}
       </div>
 
-      <div className="col-md-6">
-        <label className="form-label">Participar como*</label>
+      <div className='col-md-6'>
+        <label className='form-label'>Participar como*</label>
 
         <Controller
-          name="ocupacao"
+          name='ocupacao'
           control={control}
           rules={{ required: 'Selecione uma opção' }}
           render={({ field }) => (
             <Select
               {...field}
               options={ocupacaoOptions}
-              placeholder="Selecione..."
-              classNamePrefix="react-select"
+              placeholder='Selecione...'
+              classNamePrefix='react-select'
               value={ocupacaoOptions.find(opt => opt.value === field.value) || null}
               onChange={(selected) => field.onChange(selected?.value)}
               styles={{
@@ -86,7 +86,7 @@ export default function CategoryInfo({ register, control, errors }) {
           )}
         />
 
-        <div className="invalid-feedback d-block">
+        <div className='invalid-feedback d-block'>
           {errors?.ocupacao?.message}
         </div>
       </div>
